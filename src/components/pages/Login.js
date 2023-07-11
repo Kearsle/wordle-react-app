@@ -1,9 +1,10 @@
 import "../../App.css";
+import LoginSection from "../LoginSection";
 
 function Login() {
     return (
         <>
-            <h1>Login Page</h1>
+            <LoginSection />
         </>
     )
 }

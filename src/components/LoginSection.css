@@ -1,0 +1,40 @@
+.login-container {
+    scroll-margin-top: 80px;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.login-card {
+    background: #cfcfcf;
+    width: 50vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    object-fit: contain;
+    border-radius: 25px;
+    border: 2px solid #e34040;
+    padding: 20px;
+    margin: 1vh;
+}
+
+button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input {
+    font-size: 20px;
+}
+
+.register-container {
+    text-align: center;
+}
