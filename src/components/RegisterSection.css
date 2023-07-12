@@ -1,4 +1,4 @@
-.login-container {
+.register-container {
     scroll-margin-top: 80px;
     width: 100%;
     height: 80vh;
@@ -8,7 +8,7 @@
     font-size: 18px;
 }
 
-.login-card {
+.register-card {
     background: #cfcfcf;
     height: fit-content;
     display: flex;
@@ -21,14 +21,15 @@
     margin: 1vh;
 }
 
+button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 label {
     margin-top: 10px;
 }
 
 input {
     font-size: 20px;
-}
-
-.register-link {
-    text-align: center;
 }

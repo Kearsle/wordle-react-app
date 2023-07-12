@@ -1,45 +1,46 @@
 import React, { useState } from "react";
-import "./LoginSection.css";
-import { Link } from "react-router-dom"
+import "./RegisterSection.css";
 import axios from "axios";
 
-function LoginSection() {
+function RegisterSection() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('http://127.0.0.1:8000/user/login', {username, password})
+    axios.post('http://127.0.0.1:8000/user/create', {username, password, email})
       .then(res => {
-        console.log(res.data.userID)
-        setUsername("")
-        setPassword("")
+          console.log(res.data.success)
+          setUsername("")
+          setPassword("")
+          setEmail("")
         })
       .catch(err => console.log(err.response.data.error));
   }
 
   return (
-    <div class="login-container">
-      <div id="login" className="login-card">
-        <form className="login-form" action="POST" onSubmit={handleSubmit}>
-          <div className="input">
+    <div class="register-container">
+      <div id="register" className="register-card">
+        <h1>Register</h1>
+        <form action="POST" onSubmit={handleSubmit}>
+          <div>
             <label for="username">Username:</label>
             <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" id="username" name="username" />
           </div>
-          <div className="input">
+          <div>
             <label for="password">Password:</label>
             <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" id="password" name="password" />
           </div>
-          <div className="submitButton">
-            <button type="submit">Login</button>
+          <div>
+            <label for="email">Email:</label>
+            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" id="email" name="email" />
           </div>
+          <button type="submit">Login</button>
         </form>
-        <div className="register-link">
-          <Link to='/register'>Register</Link>
-        </div>
       </div>
     </div>
   );
 }
 
-export default LoginSection;
+export default RegisterSection;
