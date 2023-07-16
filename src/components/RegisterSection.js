@@ -81,9 +81,16 @@ function RegisterSection() {
         routeChange();
       })
       .catch(err => {
-        toast.error(err.response.data.error, {
-          id: toastId
-        });
+        try {
+          toast.error(err.response.data.error, {
+            id: toastId
+          });
+        } catch(error) {
+          toast.error("Cannot connect to the server.\nPlease try again later.", {
+            id: toastId
+          });
+        }
+        
       });
   }
 
