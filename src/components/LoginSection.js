@@ -1,13 +1,25 @@
 import React, { useState } from "react";
 import "./LoginSection.css";
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+import toast from 'react-hot-toast';
 import FormInput from "./FormInput";
 import axios from "axios";
 
 function LoginSection() {
-  const [values, setvalues] = useState({
-    username:"",
-    password:""
+  let navigate = useNavigate(); 
+  const routeChangeRegister = () =>{ 
+    let path = `../register`; 
+    navigate(path);
+  }
+
+  const routeChangeHome = () =>{ 
+    let path = `../`; 
+    navigate(path);
+  }
+
+  const [values, setValues] = useState({
+    username: "",
+    password: ""
   });
 
   const inputs = [
@@ -26,37 +38,40 @@ function LoginSection() {
       label: "Password"
     }
 ]
-
   const handleSubmit = (e) => {
     e.preventDefault()
     const data = new FormData(e.target)
-    console.log(Object.fromEntries(data.entries()))
-    /*axios.post('http://127.0.0.1:8000/user/login', {username, password})
+    const username = Object.fromEntries(data.entries()).username
+    const password = Object.fromEntries(data.entries()).password
+    const toastId = toast.loading('Loading...');
+    axios.post('http://127.0.0.1:8000/user/login', {username, password})
       .then(res => {
-        console.log(res.data.userID)
-        setUsername("")
-        setPassword("")
-        })
-      .catch(err => console.log(err.response.data.error));*/
+        toast.success("Logged in", {
+          id: toastId
+        });
+        routeChangeHome();
+      })
+      .catch(err => {
+        toast.error(err.response.data.error, {
+          id: toastId
+        });
+      });
+  }
+
+  const handleChange = (e) => {
+     setValues({...values, [e.target.name]: e.target.value})
   }
 
   return (
     <div class="login-container">
-      <div id="login" className="login-card">
-        <form className="login-form" action="POST" onSubmit={handleSubmit}>
-          <FormInput name="username" placeholder="Username"/>
-          <div className="input">
-            <label for="password">Password:</label>
-            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" id="password" name="password" />
-          </div>
-          <div className="submitButton">
-            <button type="submit">Login</button>
-          </div>
-        </form>
-        <div className="register-link">
-          <Link to='/register'>Register</Link>
-        </div>
-      </div>
+      <form className="login-form" action="POST" onSubmit={handleSubmit}>
+        <h1>Login</h1>
+        {inputs.map((input) => (
+          <FormInput key={input.id} {...input} value={values[input.name]} onChange={handleChange} />
+        ))}
+        <button id="buttonLoginSubmit" type="submit">Login</button>
+        <button id="buttonRegister" onClick={routeChangeRegister}>Don't have an account?</button>
+      </form>
     </div>
   );
 }
