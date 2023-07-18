@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import "./RegisterSection.css";
-import FormInput from './FormInput'
+import FormInput from '../FormInput'
 import axios from "axios";
 
 function RegisterSection() {
@@ -73,9 +73,9 @@ function RegisterSection() {
     const password = Object.fromEntries(data.entries()).password
     const email = Object.fromEntries(data.entries()).email
     const toastId = toast.loading('Loading...');
-    axios.post('http://127.0.0.1:8000/user/create', {username, password, email})
+    axios.post('http://localhost:8000/user/create', {username, password, email})
       .then(res => {
-        toast.success("Account created.", {
+        toast.success("Account created!", {
           id: toastId
         });
         routeChange();

@@ -1,30 +1,29 @@
-.register-container {
+.login-container {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: 90vh;
     background: radial-gradient(
         rgb(41, 67, 92),
         rgb(21, 42, 56)
     );
 }
 
-.register-form {
+.login-form {
     background: rgb(209, 212, 201);
     padding: 0px 60px;
     border: 2px solid rgb(85, 110, 83);
     border-radius: 10px;
-    min-width: 500px;
+    overflow: hidden;
 }
 
-.register-container h1 {
+.login-container h1 {
     color: rgb(85, 110, 83);
     margin-top: 10px;
     text-align: center;
 }
 
-.register-container button {
+.login-container button {
     width: 100%;
     height: 50px;
     padding: 10px;
@@ -35,13 +34,13 @@
     cursor: pointer;
 }
 
-#buttonRegisterSubmit {
+#buttonLoginSubmit {
     margin-top: 15px;
     color: rgb(209, 212, 201);
     background-color: rgb(85, 110, 83);
 }
 
-#buttonLogin {
+#buttonRegister {
     margin-top: 5px;
     margin-bottom: 10px;
     color: rgb(85, 110, 83);

@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./LoginSection.css";
 import { useNavigate } from "react-router-dom"
 import toast from 'react-hot-toast';
-import FormInput from "./FormInput";
+import FormInput from "../FormInput";
 import axios from "axios";
+import AuthContext from "../../context/AuthContext";
 
 function LoginSection() {
+  const {getLoggedIn} = useContext(AuthContext);
+
   let navigate = useNavigate(); 
   const routeChangeRegister = () =>{ 
     let path = `../register`; 
@@ -44,13 +47,14 @@ function LoginSection() {
     const username = Object.fromEntries(data.entries()).username
     const password = Object.fromEntries(data.entries()).password
     const toastId = toast.loading('Loading...');
-    axios.post('http://127.0.0.1:8000/user/login', {username, password})
+    axios.post('http://localhost:8000/user/login', {username, password})
       .then(res => {
-        toast.success("Logged in", {
+        toast.success("Logged in!", {
           id: toastId
         });
+        getLoggedIn();
         routeChangeHome();
-      })
+        })
       .catch(err => {
         try {
           toast.error(err.response.data.error, {

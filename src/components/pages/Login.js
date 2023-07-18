@@ -1,5 +1,5 @@
 import "../../App.css";
-import LoginSection from "../LoginSection";
+import LoginSection from "../auth/LoginSection";
 
 function Login() {
     return (
