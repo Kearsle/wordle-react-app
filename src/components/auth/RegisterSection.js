@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import "./RegisterSection.css";
-import FormInput from '../FormInput'
+import FormInput from '../layout/FormInput'
 import axios from "axios";
 
 function RegisterSection() {
@@ -32,7 +32,8 @@ function RegisterSection() {
       errorTaken: "Username is already taken.",
       label: "Username",
       pattern: "^[A-Za-z0-9]{3,16}$",
-      required: true
+      required: true,
+      autocomplete: "new-username"
     },
     {
       id: 2,
@@ -42,7 +43,8 @@ function RegisterSection() {
       errorMessage: "Please provide a valid email address.",
       errorTaken: "This email is already used.",
       label: "Email",
-      required: true
+      required: true,
+      autocomplete: "new-email"
     },
     {
       id: 3,
@@ -52,7 +54,8 @@ function RegisterSection() {
       errorMessage: "Password must be between 5-20 characters.",
       label: "Password",
       pattern: "^[^\n ]{5,20}$",
-      required: true
+      required: true,
+      autocomplete: "new-password"
     },
     {
       id: 4,
@@ -62,7 +65,8 @@ function RegisterSection() {
       errorMessage: "Passwords do not match.",
       label: "Confirm Password",
       pattern: values.password,
-      required: true
+      required: true,
+      autocomplete: "new-password"
     }
   ]
 

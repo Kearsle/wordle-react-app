@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import "./LoginSection.css";
 import { useNavigate } from "react-router-dom"
 import toast from 'react-hot-toast';
-import FormInput from "../FormInput";
+import FormInput from "../layout/FormInput";
 import axios from "axios";
 import AuthContext from "../../context/AuthContext";
 
