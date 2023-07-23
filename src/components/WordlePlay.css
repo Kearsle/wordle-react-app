@@ -1,0 +1,13 @@
+.wordle-container {
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.wordle-title {
+    color: rgb(209, 212, 201);
+    font-size: 3rem;
+}

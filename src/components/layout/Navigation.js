@@ -13,7 +13,7 @@ function Navbar() {
             <nav className="navbar">
                 <div className="navbar-container">
                     <Link to="/" className="navbar-logo">
-                        Wordle
+                        WORDLE
                     </Link>
                     {loggedIn === false && (
                         <ul className="nav-menu">

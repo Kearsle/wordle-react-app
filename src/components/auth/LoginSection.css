@@ -2,23 +2,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90vh;
-    background: radial-gradient(
-        rgb(41, 67, 92),
-        rgb(21, 42, 56)
-    );
+    height: 90vh;;
 }
 
 .login-form {
-    background: rgb(209, 212, 201);
+    background: #E8EDDF;
     padding: 0px 60px;
-    border: 2px solid rgb(85, 110, 83);
+    border: 2px solid #1C9C76;
     border-radius: 10px;
     overflow: hidden;
 }
 
 .login-container h1 {
-    color: rgb(85, 110, 83);
+    color:#1C9C76;
     margin-top: 10px;
     text-align: center;
 }
@@ -36,14 +32,14 @@
 
 #buttonLoginSubmit {
     margin-top: 15px;
-    color: rgb(209, 212, 201);
-    background-color: rgb(85, 110, 83);
+    color: #E8EDDF;
+    background-color: #1C9C76;
 }
 
 #buttonRegister {
     margin-top: 5px;
     margin-bottom: 10px;
-    color: rgb(85, 110, 83);
-    background-color: rgb(209, 212, 201);
-    border: 2px solid rgb(85, 110, 83);
+    color: #1C9C76;
+    background-color: #E8EDDF;
+    border: 2px solid #1C9C76;
 }

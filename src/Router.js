@@ -6,6 +6,8 @@ import Login from './components/pages/Login';
 import Register from './components/pages/Register';
 import Footer from './components/layout/Footer';
 import AuthContext from "./context/AuthContext";
+import Play from "./components/pages/Play";
+import Wordle from "./components/pages/Wordle";
 
 function Router() {
 
@@ -20,6 +22,12 @@ function Router() {
                     <>
                     <Route path='/login' exact Component={Login}></Route>
                     <Route path='/register' exact Component={Register}></Route>
+                    </>
+                )}
+                {loggedIn === true && (
+                    <>
+                    <Route path="/play" exact Component={Play}></Route>
+                    <Route path="/play/:wordlist" exact Component={Wordle}></Route>
                     </>
                 )}
             </Routes>

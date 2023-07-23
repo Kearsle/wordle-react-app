@@ -1,5 +1,5 @@
 .footer-container {
-    background: rgb(21, 42, 56);
+    background: #242424;
     width: 100vw;
     height: 5vh;
     display: flex;
@@ -10,6 +10,6 @@
 }
 
 #footer-copyright-text {
-    color: rgb(209, 212, 201);
+    color: #E8EDDF;
     font-size: 10px;
 }

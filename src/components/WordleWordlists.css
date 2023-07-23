@@ -1,19 +1,25 @@
-.home-container {
+.wordlists-container {
     height: 90vh;
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #E8EDDF
 }
 
-.home-play-button {
+.wordlist-selection {
+    list-style: none;
+}
+
+.wordlist-selection-button {
+    width: 100%;
+    height: 75%;
     padding: 10px;
     border: none;
     border-radius: 5px;
     font-weight: bold;
     font-size: 18px;
     cursor: pointer;
-    color: #1C9C76;
-    background-color: #E8EDDF;
+    color: rgb(85, 110, 83);
+    background-color: rgb(209, 212, 201);
+    margin: 1rem 0 1rem 0;
 }
