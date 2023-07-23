@@ -26,7 +26,7 @@ function AuthContextProvider(props) {
     }, [])
 
     return <AuthContext.Provider value={{loggedIn, getLoggedIn}}>        
-        {loading ? <div className="app-spinner"><PulseLoader id="pulse-loader" color="#D4D1C9" /></div>: props.children }        
+        {loading ? <div className="app-spinner"><PulseLoader id="pulse-loader" color="#E8EDDF" /></div>: props.children }        
     </AuthContext.Provider>;
 }
 export default AuthContext;

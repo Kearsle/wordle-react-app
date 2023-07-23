@@ -11,13 +11,13 @@ function App() {
 
   return (
     <div className="app-background">
-    <Toaster 
-        position="bottom-center"
-        reverseOrder={false}
-        />
-    <AuthContextProvider> 
-      <Router />
-    </AuthContextProvider>
+      <Toaster 
+          position="bottom-center"
+          reverseOrder={false}
+          />
+      <AuthContextProvider> 
+        <Router />
+      </AuthContextProvider>
     </div>
   );
 }
