@@ -34,7 +34,7 @@ export default observer (function WordlePlay() {
         {store.guesses.map((_, i) => (
             <Guess key={i} colourRes={store.guessesRes[i]} guess={store.guesses[i]} isGuessed={i < store.currentGuess}/>
         ))}
-        {store.gameOver === true && (store.won ? <h1>you won</h1> : <h1>you lost</h1>)}
+        {store.gameOver === true && (store.won ? <div className="wordle-game-over-cover"><div className="wordle-game-over-card" id="wordle-game-over-win"><h1 className="wordle-game-over">You win!</h1></div></div> : <div className="wordle-game-over-cover"><div className="wordle-game-over-card" id="wordle-game-over-loss"><h1 className="wordle-game-over">You lost.</h1></div></div>)}
         </>)}
     </div>);
 })
