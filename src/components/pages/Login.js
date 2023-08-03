@@ -3,11 +3,11 @@ import "../../App.css";
 import LoginSection from "../auth/LoginSection";
 
 function Login() {
-    return (
-        <>
-            <LoginSection />
-        </>
-    )
+  return (
+    <>
+      <LoginSection />
+    </>
+  );
 }
 
-export default Login
+export default Login;

@@ -1,19 +1,19 @@
 .home-container {
-    height: 90vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #E8EDDF
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e8eddf;
 }
 
 .home-play-button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 18px;
-    cursor: pointer;
-    color: #1C9C76;
-    background-color: #E8EDDF;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  color: #1c9c76;
+  background-color: #e8eddf;
 }

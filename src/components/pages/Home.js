@@ -3,11 +3,11 @@ import "../../App.css";
 import HomeSection from "../Home";
 
 function Home() {
-    return (
-        <>
-            <HomeSection />
-        </>
-    )
+  return (
+    <>
+      <HomeSection />
+    </>
+  );
 }
 
-export default Home
+export default Home;

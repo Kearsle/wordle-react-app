@@ -1,13 +1,13 @@
 import React from "react";
 import "../../App.css";
-import RegisterSection from "../auth/RegisterSection"
+import RegisterSection from "../auth/RegisterSection";
 
 function Register() {
-    return (
-        <>
-            <RegisterSection />
-        </>
-    )
+  return (
+    <>
+      <RegisterSection />
+    </>
+  );
 }
 
-export default Register
+export default Register;
