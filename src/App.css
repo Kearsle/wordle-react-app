@@ -7,10 +7,7 @@
 
 .app-background {
   height: 100vh;
-  background: radial-gradient(
-    #333533,
-        #242424
-    );
+  background: radial-gradient(#333533, #242424);
 }
 
 .app-spinner {

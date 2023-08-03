@@ -3,11 +3,11 @@ import "../../App.css";
 import WordlePlay from "../WordlePlay";
 
 function Wordle() {
-    return (
-        <>
-            <WordlePlay />
-        </>
-    )
+  return (
+    <>
+      <WordlePlay />
+    </>
+  );
 }
 
-export default Wordle
+export default Wordle;

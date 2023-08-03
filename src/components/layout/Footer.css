@@ -1,15 +1,15 @@
 .footer-container {
-    background: #242424;
-    width: 100vw;
-    height: 5vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    object-fit: contain;
+  background: #242424;
+  width: 100vw;
+  height: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
 }
 
 #footer-copyright-text {
-    color: #E8EDDF;
-    font-size: 10px;
+  color: #e8eddf;
+  font-size: 10px;
 }

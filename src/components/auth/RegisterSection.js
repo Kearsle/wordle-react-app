@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
-import toast from 'react-hot-toast';
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 import "./RegisterSection.css";
-import FormInput from '../layout/FormInput'
+import FormInput from "../layout/FormInput";
 import axios from "axios";
 
 function RegisterSection() {
-  let navigate = useNavigate(); 
+  let navigate = useNavigate();
 
-  const routeChange = () =>{
-    let path = "../login"
+  const routeChange = () => {
+    let path = "../login";
     navigate(path);
-  }
+  };
 
   const [values, setValues] = useState({
     username: "",
@@ -19,7 +19,7 @@ function RegisterSection() {
     password: "",
     email: "",
     emailTaken: "",
-    confirmPassword: ""
+    confirmPassword: "",
   });
 
   const inputs = [
@@ -28,12 +28,13 @@ function RegisterSection() {
       name: "username",
       type: "text",
       placeholder: "Username",
-      errorMessage: "Username must be between 3-16 characters and cannot include special characters.",
+      errorMessage:
+        "Username must be between 3-16 characters and cannot include special characters.",
       errorTaken: "Username is already taken.",
       label: "Username",
       pattern: "^[A-Za-z0-9]{3,16}$",
       required: true,
-      autocomplete: "new-username"
+      autocomplete: "new-username",
     },
     {
       id: 2,
@@ -44,7 +45,7 @@ function RegisterSection() {
       errorTaken: "This email is already used.",
       label: "Email",
       required: true,
-      autocomplete: "new-email"
+      autocomplete: "new-email",
     },
     {
       id: 3,
@@ -55,7 +56,7 @@ function RegisterSection() {
       label: "Password",
       pattern: "^[^\n ]{5,20}$",
       required: true,
-      autocomplete: "new-password"
+      autocomplete: "new-password",
     },
     {
       id: 4,
@@ -66,51 +67,68 @@ function RegisterSection() {
       label: "Confirm Password",
       pattern: values.password,
       required: true,
-      autocomplete: "new-password"
-    }
-  ]
+      autocomplete: "new-password",
+    },
+  ];
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    const data = new FormData(e.target)
-    const username = Object.fromEntries(data.entries()).username
-    const password = Object.fromEntries(data.entries()).password
-    const email = Object.fromEntries(data.entries()).email
-    const toastId = toast.loading('Loading...');
-    axios.post('http://localhost:8000/user/create', {username, password, email})
-      .then(res => {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    const username = Object.fromEntries(data.entries()).username;
+    const password = Object.fromEntries(data.entries()).password;
+    const email = Object.fromEntries(data.entries()).email;
+    const toastId = toast.loading("Loading...");
+    axios
+      .post("http://localhost:8000/user/create", { username, password, email })
+      .then((res) => {
         toast.success("Account created!", {
-          id: toastId
+          id: toastId,
         });
         routeChange();
       })
-      .catch(err => {
+      .catch((err) => {
         try {
           toast.error(err.response.data.error, {
-            id: toastId
+            id: toastId,
           });
-        } catch(error) {
-          toast.error("Cannot connect to the server.\nPlease try again later.", {
-            id: toastId
-          });
+        } catch (error) {
+          toast.error(
+            "Cannot connect to the server.\nPlease try again later.",
+            {
+              id: toastId,
+            }
+          );
         }
-        
       });
-  }
+  };
 
   const handleChange = (e) => {
-    setValues({...values, [e.target.name]: e.target.value})
-  }
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
 
   return (
     <div class="register-container">
-      <form autoComplete="new-password" className="register-form" action="POST" onSubmit={handleSubmit}>
+      <form
+        autoComplete="new-password"
+        className="register-form"
+        action="POST"
+        onSubmit={handleSubmit}
+      >
         <h1>Register</h1>
         {inputs.map((input) => (
-          <FormInput key={input.id} {...input} value={values[input.name]} onChange={handleChange} />
+          <FormInput
+            key={input.id}
+            {...input}
+            value={values[input.name]}
+            onChange={handleChange}
+          />
         ))}
-        <button id="buttonRegisterSubmit" type="submit">Register</button>
-        <button id="buttonLogin" onClick={routeChange}>Already have an account?</button>
+        <button id="buttonRegisterSubmit" type="submit">
+          Register
+        </button>
+        <button id="buttonLogin" onClick={routeChange}>
+          Already have an account?
+        </button>
       </form>
     </div>
   );
